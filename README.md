@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Assistant Tool — Code Explainer (Prototype)
 
-## Getting Started
+Single-page Next.js + MUI app that accepts a short code snippet, sends it to the OpenAI Responses API, and returns an explanation plus suggested improvements. No database is required.
 
-First, run the development server:
+## Features
+- Paste or type any short code snippet
+- Get natural-language explanations and improvement ideas
+- Configure the OpenAI model/key via `.env.local`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
+- Next.js (App Router)
+- React 18
+- Material UI (MUI)
+- OpenAI Responses API
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prerequisites
+- Node.js 18+
+- npm
+- An OpenAI API key with Responses API access
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Create your env file:
+   ```bash
+   cp .env.example .env.local
+   ```
+3. Fill in the required values inside `.env.local`:
+   ```bash
+   OPENAI_API_KEY=your_key_here
+   # Optional
+   OPENAI_MODEL=gpt-5-nano
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
+1. Start the dev server:
+   ```bash
+   npm run dev
+   ```
+2. Open `http://localhost:3000` in your browser.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Troubleshooting
+- Ensure your API key has sufficient quota and the Responses API enabled.
+- Restart the dev server after updating environment variables.
+- Check the browser console and terminal logs for detailed error messages.
